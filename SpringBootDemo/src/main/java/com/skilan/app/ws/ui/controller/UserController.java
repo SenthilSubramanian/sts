@@ -31,7 +31,7 @@ public class UserController {
 		UserRest response = new UserRest();
 		UserDTO dto = new UserDTO();
 		BeanUtils.copyProperties(userDetails, dto);
-		UserDTO resultDTO = null;
+		UserDTO resultDTO = service.createUser(dto);
 		BeanUtils.copyProperties(resultDTO, response);
 		return response;
 	}
