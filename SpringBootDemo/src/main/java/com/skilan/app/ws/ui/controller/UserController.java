@@ -31,8 +31,6 @@ public class UserController {
 		UserRest response = new UserRest();
 		UserDTO dto = new UserDTO();
 		BeanUtils.copyProperties(userDetails, dto);
-		dto.setEncryptedPassword("ToBeEncrypt");
-		dto.setUserId("TestUser");
 		UserDTO resultDTO = service.createUser(dto);
 		BeanUtils.copyProperties(resultDTO, response);
 		return response;
